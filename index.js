@@ -74,16 +74,6 @@ const vulnerability_analysis_items = [
   "Pesquisa por vulnerabilidade não conhecida"
 ]
 
-// Object.keys(localStorage).forEach(key => {
-//   const checkbox = document.getElementById(key);
-//   checkbox.checked = localStorage.getItem(key)
-// })
-
-// document.querySelectorAll('.checkinput').forEach(checkbox => {
-//   checkbox.onclick = () => {
-//       localStorage.setItem(checkbox.id, checkbox.checked)
-//   }
-// })
 
 function add_items(list, ul) {
 
@@ -142,3 +132,20 @@ document.querySelectorAll('.caption').forEach(e => {
     e.querySelector('ul').classList.toggle('close');
   }
 })
+
+document.querySelectorAll('.checkinput').forEach(checkbox => {
+  checkbox.onclick = () => {
+    localStorage.setItem(checkbox.id, checkbox.checked)
+  }
+})
+
+Object.keys(localStorage).forEach(key => {
+  const checkbox = document.getElementById(key);
+  localStorage.getItem(key) === 'false' ? checkbox.checked = false : checkbox.checked = true;
+})
+
+const reset_btn = document.getElementById('reset_btn');
+reset_btn.onclick = () => {
+  document.querySelectorAll('.checkinput').forEach(e => e.checked = false);
+  localStorage.clear();
+}
