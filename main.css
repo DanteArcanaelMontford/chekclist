@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+ul.list-group,
+.list-group-item {
+  list-style: disclosure-closed;
+}
+
+ul {
+  transition-delay: 10s;
+}
+
+li {
+  list-style: none;
+  list-style-type: disclosure-closed;
+}
+li label {
+  cursor: pointer;
+}
+
+.row .thumbnail div.caption {
+  padding: 0;
+}
+.row .thumbnail div.caption h4 {
+  background-color: #026cb7;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.close {
+  display: none;
+}
+
+.service {
+  margin-bottom: 12px;
+}/*# sourceMappingURL=main.css.map */
