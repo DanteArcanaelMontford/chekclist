@@ -81,8 +81,8 @@ function add_items(list, ul) {
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.id = e;
-    checkbox.name = e;
+    checkbox.id = e.replaceAll(' ', '_');
+    checkbox.name = e.replaceAll(' ', '_');;
 
     const span = document.createElement('span');
     span.innerText = e;
@@ -115,15 +115,19 @@ add_items(environment_analysis_items, environment_analysis);
 add_items(vulnerability_analysis_items, vulnerability_analysis);
 
 
-function toggle_element(btn_element, element_to_toggle) {
-  btn_element.onclick = () => {
-    element_to_toggle.classList.toggle('close');
-  }
+function close_all() {
+  document.querySelectorAll('.caption').forEach(e => {
+    const ul = e.querySelector('ul');
+    if(ul.contains('close')) {
+      ul.classList.add('close');
+    }
+  })
 }
 
 document.querySelectorAll('.caption').forEach(e => {
   const h4_btn = e.querySelector('h4');
   h4_btn.onclick = () => {
-      e.querySelector('ul').classList.toggle('close');
+    // close_all();
+    e.querySelector('ul').classList.toggle('close');
   }
 })
