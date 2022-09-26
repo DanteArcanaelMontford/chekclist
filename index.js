@@ -74,7 +74,6 @@ const vulnerability_analysis_items = [
   "Pesquisa por vulnerabilidade não conhecida"
 ]
 
-
 function add_items(list, ul) {
 
   list.forEach(e => {
