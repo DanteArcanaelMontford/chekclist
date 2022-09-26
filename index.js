@@ -74,6 +74,17 @@ const vulnerability_analysis_items = [
   "Pesquisa por vulnerabilidade não conhecida"
 ]
 
+// Object.keys(localStorage).forEach(key => {
+//   const checkbox = document.getElementById(key);
+//   checkbox.checked = localStorage.getItem(key)
+// })
+
+// document.querySelectorAll('.checkinput').forEach(checkbox => {
+//   checkbox.onclick = () => {
+//       localStorage.setItem(checkbox.id, checkbox.checked)
+//   }
+// })
+
 function add_items(list, ul) {
 
   list.forEach(e => {
@@ -83,6 +94,7 @@ function add_items(list, ul) {
     checkbox.type = 'checkbox';
     checkbox.id = e.replaceAll(' ', '_');
     checkbox.name = e.replaceAll(' ', '_');;
+    checkbox.classList.add('checkinput')
 
     const span = document.createElement('span');
     span.innerText = e;
@@ -98,7 +110,6 @@ function add_items(list, ul) {
     ul.appendChild(li)
   })
 }
-
 
 const information_gathering_business = document.getElementById('information_gathering__business');
 const information_gathering_infra = document.getElementById('information_gathering__infra');
